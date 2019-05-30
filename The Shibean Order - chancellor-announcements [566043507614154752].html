@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Shibean Order - chancellor-announcements</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        /* === GENERAL === */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, Monospace;
+}
+
+.pre--multiline {
+    margin-top: 4px;
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 5px;    
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 85%;
+}
+
+.mention {
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.45em;
+    height: 1.45em;
+    margin: 0 1px;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1rem;
+    height: 1rem;
+}
+
+.emoji--large {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* === INFO === */
+
+.info {
+    display: flex;
+    max-width: 100%;
+    margin: 0 5px 10px 5px;    
+}
+
+.info__guild-icon-container {
+    flex: 0;
+}
+
+.info__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.info__metadata {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.info__guild-name {
+    font-size: 1.4em;
+}
+
+.info__channel-name {
+    font-size: 1.2em;
+}
+
+.info__channel-topic {
+    margin-top: 2px;
+}
+
+.info__channel-message-count {
+    margin-top: 2px;
+}
+
+.info__channel-date-range {
+    margin-top: 2px;
+}
+
+/* === CHATLOG === */
+
+.chatlog {
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.chatlog__message-group {
+    display: flex;
+    margin: 0 10px;
+    padding: 15px 0;
+    border-top: 1px solid;
+}
+
+.chatlog__author-avatar-container {
+    flex: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    flex: 1;
+    min-width: 50%;
+    margin-left: 20px;
+}
+
+.chatlog__author-name {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 5px;
+    font-size: .75em;
+}
+
+.chatlog__content {
+    padding-top: 5px;
+    font-size: .9375em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 3px;
+    font-size: .8em;
+}
+
+.chatlog__attachment {
+    margin: 5px 0;
+}
+
+.chatlog__attachment-thumbnail {
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    max-width: 520px;
+    margin-top: 5px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    width: 100%;
+    display: flex;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.chatlog__embed-author-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 10px;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-size: .875em;
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 20px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 10px;
+}
+
+.chatlog__embed-image {    
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 10px;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-weight: 500;
+    font-size: .75em;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 6px 2px 2px 2px;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 6px;
+    font-size: .875em;
+}
+
+.chatlog__bot-tag {
+    margin-left: 0.3em;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    padding: 1px 2px;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    position: relative;
+    top: -.2em;
+}
+    </style>
+    <style>
+        /* === GENERAL === */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #839496 !important;
+}
+
+.mention {
+    color: #7289da;
+}
+
+/* === INFO === */
+
+.info__guild-name {
+    color: #ffffff;
+}
+
+.info__channel-name {
+    color: #ffffff;
+}
+
+.info__channel-topic {
+    color: #ffffff;
+}
+
+/* === CHATLOG === */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+<body>
+    
+<div class="info">
+    <div class="info__guild-icon-container">
+        <img class="info__guild-icon" src="https://cdn.discordapp.com/icons/565175844859936798/a854e46ded98ff13719d187f23ad2fd7.png" />
+    </div>
+    <div class="info__metadata">
+        <div class="info__guild-name">The Shibean Order</div>
+        <div class="info__channel-name">chancellor-announcements</div>
+        
+
+        <div class="info__channel-message-count">58 messages</div>
+        
+    </div>
+</div>
+
+<div class="chatlog">
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">11-Apr-19 07:43 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention">@here</span> the <span class="mention">@deleted-role</span> will splurt random shit, whether it be about War or Hitler-esque speeches</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="♿" title="♿" src="https://twemoji.maxcdn.com/2/72x72/267f.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🔫" title="🔫" src="https://twemoji.maxcdn.com/2/72x72/1f52b.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇪🇺" title="🇪🇺" src="https://twemoji.maxcdn.com/2/72x72/1f1ea-1f1fa.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">11-Apr-19 07:47 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Sieg He-oh wait, shit wrong greeting</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">We&#39;re in talks with a NAP and mutual recognition treaty with the Kingdom of Matachewan.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">And Im setting up a gov and yknow shit like that</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">but rn Imma go eat dinner</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:11 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">cool</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:13 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention">@here</span> Yo, so we officially signed an agreement with the Kingdom of Matachewan, which Im sure yall are familiar with, as a result, we hereby sign a Non-Aggression Pact with Matachewan, and announce that we officially recognize the independence of Matachewan. This is the first step to Shibea being pretty cool</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">also Ill be setting a gov soon</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:14 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">wow, now that is epic</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:14 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><a href="https://discord.gg/4cwZPrh">https://discord.gg/4cwZPrh</a></span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">^link to Matachewan</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:30 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention">@here</span> ya boi is back, I officially declare the following:
+<u>Executive</u>
+There is a Chancellor whom is appointed by the Doge (Shibe), the Chancellor has the powers and abilities I exercise, like a really powerful Prime Minister... that&#39;s basically it.
+<u>Legislative</u>
+The Legislative consists only of the Council of Ministers, which consists of:
+-The Secretary of the Republic
+-The Secretary of Economics
+-The Secretary of the Treasury
+-The Secretary of Defense
+And anyone else Shibe appoints to it. They are all appointed and unelected, they consist the legislative.
+<u>Judicial</u>
+The High Court is the Supreme Court, which consists of 3 justices appointed by the Chancellor on the advise of the Doge. They have the final say on all trials, lawsuits, etc. They can take any criminal case, civil case, set bail, drop charges, files charges, set up a grand jury, etc. All citizens have right to a jury unless it is decided by the Council of Ministers that the case would expose civilians to classified information, thusly making a jury impossible.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Thats just the first outline.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Also Im looking for Justices</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:45 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">As my newest act, we&#39;ve signed an act of mutual recognizance with Sewanda, this is their link:
+<a href="https://discord.gg/afVuTE">https://discord.gg/afVuTE</a></span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">12-Apr-19 09:06 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention">@everyone</span> we hereby unrecognize Matachewan, they have created a military dictatorship, they are fighting free speech and banning political opponents</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">if you are in there, fight back, I was the elected Prime Minister and I was banned for speaking the truth</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">riot</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">rise up</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">destroy them</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">turn it inside-out and upside-down and fucke verything up</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">12-Apr-19 09:09 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">woah woah</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">what happened?</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">12-Apr-19 09:11 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention" title="ZShibe#1569">@ZShibe</span> he tried to squash free speech and give himself more power, when I spoke out against him, he established a military dictatorship and banned me, even tho I broke no laws</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">mind you Im literally still the prime minister</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">12-Apr-19 09:11 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">hmn</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">12-Apr-19 09:15 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">FUCK BRANDON</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">13-Apr-19 09:02 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">okay I guess matachewan is better?</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">weird af</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">they just appointed me President and I have no idea why</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇪" title="🇪" src="https://twemoji.maxcdn.com/2/72x72/1f1ea.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇵" title="🇵" src="https://twemoji.maxcdn.com/2/72x72/1f1f5.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇮" title="🇮" src="https://twemoji.maxcdn.com/2/72x72/1f1ee.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇨" title="🇨" src="https://twemoji.maxcdn.com/2/72x72/1f1e8.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                        </div>
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">13-Apr-19 10:36 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">and we disown tghe 6th kingdom</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Tablekitten is after personal power</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👎" title="👎" src="https://twemoji.maxcdn.com/2/72x72/1f44e.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">13-Apr-19 05:38 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">I announce &quot;common sense&quot; laws rules:
+-You cant defame others
+-You cant organize, participate, or plan riots or revolutions, protests however, are ALWAYS okay
+-Spam is banned
+-Spamming @&#39;s is also banned
+-Subverting bans or anythign of the sort is banned
+-Any other common sense things you shouldn&#39;t do are banned.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention" title="ZShibe#1569">@ZShibe</span> that look good?</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">13-Apr-19 05:42 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">sure</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/220655386892566548/f1008aea6cf0d5fd411d41b28d6085c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Some Guy From Missouri#2526">Some Guy From Missouri</span>
+                <span class="chatlog__timestamp">15-Apr-19 07:24 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">hey guys sorry I havent been on in 24 hours</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/483545584326672385/7e3cf6046ef5b6e9e16853e6caa6ff16.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="&#230;ı&#248;ů#1748">&#230;ı&#248;ů</span>
+                <span class="chatlog__timestamp">16-Apr-19 12:20 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">I annouce that the series of the Economic Reforms will happen to have a Capitalist Economy for our citizens.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👌🏻" title="👌🏻" src="https://twemoji.maxcdn.com/2/72x72/1f44c-1f3fb.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🏳️‍🌈" title="🏳️‍🌈" src="https://twemoji.maxcdn.com/2/72x72/1f3f3-fe0f-200d-1f308.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown">They will be the reforms to make our economy and GDP Per Capita a lot better.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">- Wilhelm, The Prince of Shibingham and The Chancellor of The Shibean Serene Republic.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/483545584326672385/7e3cf6046ef5b6e9e16853e6caa6ff16.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="&#230;ı&#248;ů#1748">&#230;ı&#248;ů</span>
+                <span class="chatlog__timestamp">18-Apr-19 01:45 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">I step out of the role of being Chancellor since i was choosen undemocraticly by <span class="mention" title="ZShibe#1569">@ZShibe</span>.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">I also dont feel pretty well so please leave me alone.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/496215918334967818/4a001fec3d730eefc6ed7fa80f42e5b0.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="blob#8271">blob</span>
+                <span class="chatlog__timestamp">18-Apr-19 12:32 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Thank you my friends!</span>
+
+                                <span class="chatlog__edited-timestamp" title="18-Apr-19 12:32 PM">(edited)</span>
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">I honor you!</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">I shall make you proud, and our glorious nation!</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">You wont regret having me!</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Thank you,</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/496215918334967818/4a001fec3d730eefc6ed7fa80f42e5b0.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="blob#8271">blob</span>
+                <span class="chatlog__timestamp">18-Apr-19 01:02 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Hello friends!</strong>
+
+We are now building more churches and religious  days will be held on Sunday, Friday and Thursday!</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">I hope we are able to grow shibeism,
+
+It will also be our primary religion and satanist cults have been banned</span>
+
+                                <span class="chatlog__edited-timestamp" title="18-Apr-19 01:03 PM">(edited)</span>
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/496215918334967818/4a001fec3d730eefc6ed7fa80f42e5b0.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="blob#8271">blob</span>
+                <span class="chatlog__timestamp">18-Apr-19 03:21 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>BLACKOUT!</strong>
+
+Recently spotted bombers at downtown!
+
+<em>HEAD TO YOUR LOCAL BUNKER NOW!</em></span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/496215918334967818/4a001fec3d730eefc6ed7fa80f42e5b0.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="blob#8271">blob</span>
+                <span class="chatlog__timestamp">20-Apr-19 07:57 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Hello citizens and workers of our glorious republic,</strong><span class="mention">@everyone</span> 
+
+Research with in the war against the unknown forces has succeeded,
+We have discovered the enemy forces are cats.\
+Alot of questions within the media now happen
+Was  captain hound a cat?
+Did captain hound have relations to cats?
+We will do more investigation on the history of S.N Hound&#39;s captain and crew.
+Though on captain hound record he has shot 1 man without permission,
+captain hound also failed assignment training for the infantry.
+He has been to prison twice for murder, and once worked as a politician but was thrown off for being corrupt.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">We congradulate, Private Doggy dogger, Sergeant Good boy, Lieutenant Shibey shibe and the 76th military research team, for allowing us to know this great and vital information.</span>
+
+                                <span class="chatlog__edited-timestamp" title="20-Apr-19 08:01 AM">(edited)</span>
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/496215918334967818/4a001fec3d730eefc6ed7fa80f42e5b0.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="blob#8271">blob</span>
+                <span class="chatlog__timestamp">22-Apr-19 09:52 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention">@everyone</span> The shibean nazis have won! 
+Glory!
+Shibe heil, my kamerads!
+We will be the strongest and most powerful empire there will ever be, my friends!
+We will be a strong land and will win every war!
+High ego soldiers and we do not care, take any risk there may be, for the greater good!</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/499128675933880320/9b3f9552ba2c3c047306c468dc560265.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Cygnus#3271">Cygnus</span>
+                <span class="chatlog__timestamp">23-Apr-19 07:21 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(246,255,99,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">New Laws &amp; My Greetings</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown">The Chancellor before me is clearly severely mentally impaired and I have no clue how he was able to reach a rank of this esteem whilst being so shitty.
+
+I&#39;ll start out my greeting message by saying Hi. That is also the end of my greeting message and the theory.
+
+Now we move onto the practical effects that I will lay upon our (whatever this is).
+Firstly, I&#39;ve assured Bepis as Federal Product and given all stock to myself to ensure long-lasting profit.
+
+My next actions will be kept secret to keep the general populace safe.
+
+I will enforce my ideologies with an iron fist, and refuse to take trash from anyone. From this point onwards we assure our nation strong by using the Death Penalty as often as possible.
+This might be costly but it will ensure our streets are safe and our kids can once again walk around at night.
+If there is a Tobacco Company, I will ensure seizure of it&#39;s assets and make Cigarettes illegal. We will consume Bepis mixed with coffeine as a replacement and solvent to the long-lasting damage that plant has left on our city.
+
+The previous Chancellors seem to use Nazi Ideologies, these are merely stupid attempts at being edgy and I will not allow it any more.
+Any toxicity or edginess will no longer be tolerated.
+Any communist within our beautiful (whatever this is) will be found and publicly executed for his retarded beliefs.
+Death sentences will be carried out at earliest convenience, to make sure no appeals can be done.
+Upon being placed on Death row you will not be allowed contact with relatives or media, to assure no rebellions rise up.</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Comply or Die.
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention">@everyone</span></span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/499128675933880320/9b3f9552ba2c3c047306c468dc560265.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Cygnus#3271">Cygnus</span>
+                <span class="chatlog__timestamp">25-Apr-19 02:59 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><span class="mention">@everyone</span> From now on our power will be sourced from Nuclear Reactors using Thorium and a control substance consisting generally of Plutonium</span>
+
+                                <span class="chatlog__edited-timestamp" title="25-Apr-19 02:59 AM">(edited)</span>
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">This is much better, safer, and more climate friendly.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">25-Apr-19 10:38 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Good efficent problem solving there. A+ your the most competent and uncuck chancellor we&#39;ve had</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/471414276394057739/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#1569">ZShibe</span>
+                <span class="chatlog__timestamp">07-May-19 10:43 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">[Disbanded System i guess]</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+</div>
+
+</body>
+</html>
