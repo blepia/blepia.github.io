@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Shibean Order - welcome</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        /* === GENERAL === */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, Monospace;
+}
+
+.pre--multiline {
+    margin-top: 4px;
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 5px;    
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 85%;
+}
+
+.mention {
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.45em;
+    height: 1.45em;
+    margin: 0 1px;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1rem;
+    height: 1rem;
+}
+
+.emoji--large {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* === INFO === */
+
+.info {
+    display: flex;
+    max-width: 100%;
+    margin: 0 5px 10px 5px;    
+}
+
+.info__guild-icon-container {
+    flex: 0;
+}
+
+.info__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.info__metadata {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.info__guild-name {
+    font-size: 1.4em;
+}
+
+.info__channel-name {
+    font-size: 1.2em;
+}
+
+.info__channel-topic {
+    margin-top: 2px;
+}
+
+.info__channel-message-count {
+    margin-top: 2px;
+}
+
+.info__channel-date-range {
+    margin-top: 2px;
+}
+
+/* === CHATLOG === */
+
+.chatlog {
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.chatlog__message-group {
+    display: flex;
+    margin: 0 10px;
+    padding: 15px 0;
+    border-top: 1px solid;
+}
+
+.chatlog__author-avatar-container {
+    flex: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    flex: 1;
+    min-width: 50%;
+    margin-left: 20px;
+}
+
+.chatlog__author-name {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 5px;
+    font-size: .75em;
+}
+
+.chatlog__content {
+    padding-top: 5px;
+    font-size: .9375em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 3px;
+    font-size: .8em;
+}
+
+.chatlog__attachment {
+    margin: 5px 0;
+}
+
+.chatlog__attachment-thumbnail {
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    max-width: 520px;
+    margin-top: 5px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    width: 100%;
+    display: flex;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.chatlog__embed-author-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 10px;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-size: .875em;
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 20px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 10px;
+}
+
+.chatlog__embed-image {    
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 10px;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-weight: 500;
+    font-size: .75em;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 6px 2px 2px 2px;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 6px;
+    font-size: .875em;
+}
+
+.chatlog__bot-tag {
+    margin-left: 0.3em;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    padding: 1px 2px;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    position: relative;
+    top: -.2em;
+}
+    </style>
+    <style>
+        /* === GENERAL === */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #839496 !important;
+}
+
+.mention {
+    color: #7289da;
+}
+
+/* === INFO === */
+
+.info__guild-name {
+    color: #ffffff;
+}
+
+.info__channel-name {
+    color: #ffffff;
+}
+
+.info__channel-topic {
+    color: #ffffff;
+}
+
+/* === CHATLOG === */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+<body>
+    
+<div class="info">
+    <div class="info__guild-icon-container">
+        <img class="info__guild-icon" src="https://cdn.discordapp.com/icons/565175844859936798/a854e46ded98ff13719d187f23ad2fd7.png" />
+    </div>
+    <div class="info__metadata">
+        <div class="info__guild-name">The Shibean Order</div>
+        <div class="info__channel-name">welcome</div>
+        
+
+        <div class="info__channel-message-count">36 messages</div>
+        
+    </div>
+</div>
+
+<div class="chatlog">
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/244411584120619008/d634a262ceb2580ed1cd2dfce560a87f.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Harry Clifton#1978">Harry Clifton</span>
+                <span class="chatlog__timestamp">11-Apr-19 07:39 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/176458872888754176/1e8ad4aa51706136bc1e382d98541fa6.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Windfarmer#0094">Windfarmer</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:10 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/476210999859478558/89d01b620fbf2abf7020b69e36609029.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="&#127345;eter &#127345;arker#4655">&#127345;eter &#127345;arker</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:12 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/369951326383243266/b2e7890dfbfd91f1559e7e69542333a8.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Legaticus#7787">Legaticus</span>
+                <span class="chatlog__timestamp">11-Apr-19 08:20 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/553767523523493908/21fc453356ad448962ae111d888613f9.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Caesar Goldmore#1178">Caesar Goldmore</span>
+                <span class="chatlog__timestamp">11-Apr-19 09:21 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/468281173072805889/8fdd9d260556b9e75407208b3b7760c4.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="MarriageBot#7725">MarriageBot</span>
+                    <span class="chatlog__bot-tag">BOT</span>
+                <span class="chatlog__timestamp">11-Apr-19 09:37 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/180127698159534081/f5668b31d3f754743a32130325855a86.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="SA_56#3620">SA_56</span>
+                <span class="chatlog__timestamp">11-Apr-19 10:05 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/450297872735404054/e9b0bd2743e8513ecf8550f35a003718.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="hmmmmmmmmmmmmmmmm#9796">hmmmmmmmmmmmmmmmm</span>
+                <span class="chatlog__timestamp">12-Apr-19 04:09 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/443128273044504576/0bd03a7eabd0d51bde613d032b8de116.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Arrovania#5598">Arrovania</span>
+                <span class="chatlog__timestamp">12-Apr-19 04:54 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/235585425115185153/d11f756187e7daaab3eb5daa69aad073.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Cam lwea#0634">Cam lwea</span>
+                <span class="chatlog__timestamp">12-Apr-19 09:31 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/237659963256733708/6b4c1470dfc3312cd175fc36add29738.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Archie-Souver#8318">Archie-Souver</span>
+                <span class="chatlog__timestamp">12-Apr-19 10:35 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/484067214312603660/85184a20a916d09476a150b10ed180c7.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="tanos#7878">tanos</span>
+                <span class="chatlog__timestamp">13-Apr-19 05:32 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/434868718544355338/67fc186222cdca0c6b5ac77443491d4e.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="catsanddogs333 (Canary)#6535">catsanddogs333 (Canary)</span>
+                <span class="chatlog__timestamp">13-Apr-19 05:44 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/334525385255419907/37353315d1834c93dadd6fade01ff891.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Hudsans undertale#2941">Hudsans undertale</span>
+                <span class="chatlog__timestamp">13-Apr-19 07:28 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/432261684313325568/c8e01e9cab0799ca962a940e43c2ab0e.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="SodaIsAmapper#8069">SodaIsAmapper</span>
+                <span class="chatlog__timestamp">13-Apr-19 10:04 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/169497538460647425/2aee69ff56570cc0433acca5e703a5f6.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="catsanddogs334#9930">catsanddogs334</span>
+                <span class="chatlog__timestamp">13-Apr-19 11:35 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/412327562191175681/7c8d3c26315f3f4acf4b5932eff153cc.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="w&#233;w#1118">w&#233;w</span>
+                <span class="chatlog__timestamp">13-Apr-19 02:27 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/378601724518072320/b09737a8542f9e52a64d17f39f97b22c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="HelloNurse#8847">HelloNurse</span>
+                <span class="chatlog__timestamp">14-Apr-19 02:28 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/496215918334967818/4a001fec3d730eefc6ed7fa80f42e5b0.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="blob#8271">blob</span>
+                <span class="chatlog__timestamp">14-Apr-19 12:58 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/302464957566550017/0d0e5fcf857620afa7b1107a190133da.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="knnt1#7908">knnt1</span>
+                <span class="chatlog__timestamp">14-Apr-19 02:51 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/317051648377880589/15fcf8b65e7a26c0072f5849820aa320.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="demon thing#4924">demon thing</span>
+                <span class="chatlog__timestamp">14-Apr-19 02:52 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/264362178839183361/010190d3dc80f9cb4ad70c38940eb635.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="RICARDO MILOSevic#6505">RICARDO MILOSevic</span>
+                <span class="chatlog__timestamp">16-Apr-19 02:44 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/255984849674829824/c76e0d8effa3a7e42bb6217bc42c7a96.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Антонеску Ротару (eskii)#8159">Антонеску Ротару (eskii)</span>
+                <span class="chatlog__timestamp">16-Apr-19 03:15 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="shibemaen#5402">shibemaen</span>
+                <span class="chatlog__timestamp">18-Apr-19 12:23 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/219470335551078400/927443102d634ef733db77b5a01dbbcc.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Neduardo, Mexican Gnome Arranger#3892">Neduardo, Mexican Gnome Arranger</span>
+                <span class="chatlog__timestamp">18-Apr-19 12:31 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/190146898588467200/8814afe8bd01aa891d5375d86301a2d6.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Scar#0984">Scar</span>
+                <span class="chatlog__timestamp">18-Apr-19 12:48 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/295660293319819265/3f7a53433ce1ccd8cce63d37df19ae0e.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Nairu#1594">Nairu</span>
+                <span class="chatlog__timestamp">18-Apr-19 01:00 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/499128675933880320/9b3f9552ba2c3c047306c468dc560265.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Cygnus#3271">Cygnus</span>
+                <span class="chatlog__timestamp">21-Apr-19 09:38 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/469591654030901248/eb8303979f1aea644fcaf39231024352.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Brandon Mierzwa#3086">Brandon Mierzwa</span>
+                <span class="chatlog__timestamp">25-Apr-19 05:33 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/292953664492929025/26db45ecd6bb37791071a0b46e77ca4b.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="UnbelievaBoat#1046">UnbelievaBoat</span>
+                    <span class="chatlog__bot-tag">BOT</span>
+                <span class="chatlog__timestamp">26-Apr-19 12:52 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/265597998585610241/0d597789db6d4f98b6f8dc86c1bf63bd.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Feln#2726">Feln</span>
+                <span class="chatlog__timestamp">06-May-19 01:39 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/366600644683104256/2c4483b9613b4e9b45dc2bdf52111df5.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Сталкер Манси#6752">Сталкер Манси</span>
+                <span class="chatlog__timestamp">08-May-19 11:53 AM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/402288004946853889/3f0244f0847ba86759de5e88db2193b2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="KomradeDoge#5114">KomradeDoge</span>
+                <span class="chatlog__timestamp">08-May-19 09:37 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/488098013395288064/3fdf00644c138baa93b18180038eb627.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Prince Johann of Kaiserhof#8021">Prince Johann of Kaiserhof</span>
+                <span class="chatlog__timestamp">09-May-19 10:04 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/583758921848848404/a0e34fc76ebae80275a1169e55facb7d.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="ZShibe#6962">ZShibe</span>
+                <span class="chatlog__timestamp">30-May-19 05:28 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">Joined the server.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+</div>
+
+</body>
+</html>
