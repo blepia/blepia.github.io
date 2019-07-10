@@ -1,0 +1,120 @@
+@font-face {
+    font-family: Andika;
+    src: url(https://fonts.googleapis.com/css?family=Andika);
+}
+body {
+    background-color: antiquewhite;
+    font-family: Andika;
+}
+
+.banner {
+    background: url('https://cdn.discordapp.com/attachments/310208152198971392/598615213092372490/unknown.png') top;
+    background-size: Auto 100%;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 1614px;
+    color: black;
+    text-align: right;
+    padding: 25px;
+    border-style: double;
+    margin: 0 auto;
+}
+
+#languageENG {
+    height: 50px;
+    width: 75px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+#languageBLP {
+    height: 50px;
+    width: 75px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+#languageSRB {
+    height: 50px;
+    width: 75px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+#languageRBP {
+    height: 50px;
+    width: 75px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+#languageENG img {
+    display: block;
+    height: 46px;
+    width: 71px;
+}
+
+#languageBLP img {
+    display: block;
+    height: 46px;
+    width: 71px;
+}
+
+#languageSRB img {
+    display: block;
+    height: 46px;
+    width: 71px;
+}
+
+#languageRBP img {
+    display: block;
+    height: 46px;
+    width: 71px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+#buttonSRB {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 7px 11px;
+        text-decoration: none;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+/* Show the dropdown menu on hover */
+#buttonSRB:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+#buttonSRB:hover #languageSRB {
+    background-color: #888888;
+}
+
+p {
+    font-family: Andika;
+    font-size: 20px;
+}
